@@ -1,5 +1,6 @@
 import { Menubar } from 'primereact/menubar';
 import CartWidget from './CartWidget';
+import images from '../assets/images';
 
 const MenuNavBar = (props) => {
     const items = [
@@ -129,8 +130,9 @@ const MenuNavBar = (props) => {
             icon: 'pi pi-fw pi-power-off'
         }
     ];
-
-    const start = <img alt="logo" src="showcase/images/logo.png" onError={(e) => e.target.src='https://www.primefaces.org/wp-content/uploads/2020/05/placeholder.png'} height="40" className="mr-2"></img>;
+    
+    const start = <img src={images.logo1} height="50" className="mr-2"></img>;
+    
     const end = <CartWidget />;
     {/* <InputText placeholder="Search" type="text" />; */}
 
