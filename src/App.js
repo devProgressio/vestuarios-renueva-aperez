@@ -8,8 +8,11 @@ import ItemListContainer from "./components/ItemListContainer";
 
 function App() {
   return (
+    <>
     <MenuNavBar />
-    
+    <br></br>
+    <ItemListContainer />
+    </>
   );
 }
 
