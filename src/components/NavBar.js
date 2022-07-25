@@ -3,6 +3,7 @@ import CartWidget from './CartWidget';
 import images from '../assets/images';
 
 const MenuNavBar = (props) => {
+    console.log('Me renderice NAVBAR');
     const items = [
         {
             label: 'File',
@@ -132,9 +133,7 @@ const MenuNavBar = (props) => {
     ];
     
     const start = <img src={images.logo1} height="50" className="mr-2"></img>;
-    
     const end = <CartWidget />;
-    {/* <InputText placeholder="Search" type="text" />; */}
 
     return (
         <div>
