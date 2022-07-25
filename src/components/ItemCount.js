@@ -3,7 +3,7 @@ import { Button } from 'primereact/button';
 
 const ItemCount = ({ initial, stock, onAdd }) => {
 
-    const [contador, setContador] = useState(1);
+    const [contador, setContador] = useState(initial);
     console.log('Me renderice');
     const sumar = () => {
         if (contador < stock) {
