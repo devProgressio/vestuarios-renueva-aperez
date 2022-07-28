@@ -12,7 +12,7 @@ function App() {
     <>
     <MenuNavBar />
     <br></br>
-    <ItemListContainer greeting='Hola chicos!'/>
+    <ItemListContainer greeting='MENSAJE'/>
     </>
   );
 }
