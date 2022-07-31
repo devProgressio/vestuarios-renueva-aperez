@@ -137,9 +137,7 @@ const MenuNavBar = (props) => {
 
     return (
         <div>
-            <div className="card">
-                <Menubar model={items} start={start} end={end} />
-            </div>
+            <Menubar model={items} start={start} end={end} />
         </div>
     );
 }

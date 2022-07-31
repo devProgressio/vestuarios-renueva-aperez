@@ -1,27 +1,29 @@
 import { useState } from 'react';
 import { Button } from 'primereact/button';
+import { Knob } from 'primereact/knob';
 
 const ItemCount = ({ initial, stock, onAdd }) => {
-
     const [contador, setContador] = useState(initial);
-    console.log('Me renderice');
     const sumar = () => {
         if (contador < stock) {
             setContador(contador + 1);
         }
-    }
+    };
 
     const restar = () => {
         if (contador > initial) {
             setContador(contador - 1);
         }
-    }
+    };
+
+    const knobContador = (
+        <Knob value={contador} min={initial} max={stock} size={90} onChange={(e) => setContador(e)} />
+    );
 
     return (
         <>
             <div>
-                <h2>{contador}</h2>
-                <br></br>
+                {knobContador}
                 <Button onClick={sumar}>SUMAR</Button>
                 &nbsp;
                 <Button onClick={restar}>RESTAR</Button>

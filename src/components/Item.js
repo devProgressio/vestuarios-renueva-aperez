@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import ItemCount from '../components/ItemCount';
 import { Card } from 'primereact/card';
-import { Button } from 'primereact/button';
 
 
 const Item = ({ producto }) => {
@@ -18,8 +17,6 @@ const Item = ({ producto }) => {
     const footer = (
         <span>
             <ItemCount initial={1} stock={stock} onAdd={onAdd} />
-            {/* <Button label="Save" icon="pi pi-check" />
-            <Button label="Cancel" icon="pi pi-times" className="p-button-secondary ml-2" /> */}
         </span>
     );
 
@@ -39,14 +36,12 @@ const Item = ({ producto }) => {
                 </div> */
 
 
-        <div>
-            <Card title={name} subTitle={description} style={{ width: '25em' }} footer={footer} header={header}>
-
+        <div className='field col'>
+            <Card title={name} subTitle={description} style={{ width: '20em' }} footer={footer} header={header}>
                 <p className="card-text">${price}</p>
                 <p className="card-text">stock: {stock}</p>
                 {hashtags?.map((frase, index) => <p className="card-text" key={index}>{frase}</p>)}
                 {mensaje && <p>{mensaje}</p>}
-                {/* <ItemCount initial={1} stock={stock} onAdd={onAdd} /> */}
                 {/* <button className='btn btn-primary'>Ver más</button> */}
             </Card>
         </div>
