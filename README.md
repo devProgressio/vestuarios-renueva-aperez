@@ -1,14 +1,22 @@
 # Vestuario Renueva
 
+Es una tienda de vestimenta que ofrece diferentes categorías de ropa. Se basa en la compra a través de un carro de compras.
+
 ![Vestuario-renueva](https://user-images.githubusercontent.com/51928776/182741805-c6aa1c81-dfb0-4331-8fe8-c3d328ef3b35.gif)
 
-Proyecto creado para coderhouse en react.
-
-Tecnologias:
+Tecnologías:
 1. JSX
+2. Javascript, HTML5, CSS3
 2. PrimeReact
 3. PrimeFlex
 4. PrimeIcons
+
+Herramientas:
+1. Visual Studio Code.
+2. GitHub
+3. Microsoft Edge (Para el Debug)
+
+Este proyecto fue creado para el curso de ReactJs de Coderhouse.
 
 #
 #
