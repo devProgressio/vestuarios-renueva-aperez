@@ -1,3 +1,20 @@
+# Vestuario Renueva
+
+![Vestuario-renueva](https://user-images.githubusercontent.com/51928776/182741805-c6aa1c81-dfb0-4331-8fe8-c3d328ef3b35.gif)
+
+Proyecto creado para coderhouse en react.
+
+Tecnologias:
+1. JSX
+2. PrimeReact
+3. PrimeFlex
+4. PrimeIcons
+
+#
+#
+#
+#
+#
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
