@@ -1,23 +1,19 @@
-import { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
-import ItemDetail from "./ItemDetail";
-import { ProgressSpinner } from "primereact/progressspinner";
+import { useEffect, useState } from 'react';
+import { useParams } from 'react-router-dom';
+import { data } from '../mock/FakeApi';
+import ItemDetail from './ItemDetail';
+import { ProgressSpinner } from 'primereact/progressspinner';
 
 const ItemDetailContainer = () => {
-    const [item, setItem] = useState([]);
+    const [producto, setProducto] = useState({});
+    const [loading, setLoading] = useState(true);
     const { id } = useParams();
 
-    // const id = 1;
-    const getOneProduct = (id) => {
-        fetch("../JSON/DataList.json")
-            .then((response) => response.json())
-            .then((data) =>
-                setItem(data.filter((item) => item.id === parseInt(id))[0])
-            );
-    };
-
     useEffect(() => {
-        getOneProduct(id);
+        data
+            .then((res) => setProducto(res.find((item) => item.id == id)))
+            .catch((error) => console.log(error))
+            .finally(() => setLoading(false));
     }, [id]);
 
     const spinner = (
@@ -29,13 +25,9 @@ const ItemDetailContainer = () => {
 
     return (
         <div>
-            {item.length !== 0 ? (
-                <ItemDetail item={item} />
-            ) : (
-                {spinner}
-            )}
+            {loading ? spinner : <ItemDetail producto={producto} />}
         </div>
-    )
-}
+    );
+};
 
 export default ItemDetailContainer;

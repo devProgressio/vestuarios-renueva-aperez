@@ -17,19 +17,20 @@ const ItemCount = ({ initial, stock, onAdd }) => {
     };
 
     const knobContador = (
-        <Knob value={contador} min={initial} max={stock} size={90} onChange={(e) => setContador(e)} />
+        <Knob value={contador} min={initial} max={stock} size={90} readOnly="true" onChange={(e) => setContador(e)} />
     );
 
     return (
         <>
             <div>
                 {knobContador}
-                <Button onClick={sumar}>SUMAR</Button>
+                <Button icon="pi pi-minus" onClick={restar}/>
                 &nbsp;
-                <Button onClick={restar}>RESTAR</Button>
+                <Button icon="pi pi-plus" onClick={sumar}/>
+                &nbsp;
+                &nbsp;
+                <Button onClick={() => onAdd(contador)}>Agregar al carrito</Button>
             </div>
-            <br></br>
-            <Button onClick={() => onAdd(contador)}>AGREGAR</Button>
         </>
     );
 }

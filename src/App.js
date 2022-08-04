@@ -7,6 +7,8 @@ import MenuNavBar from './components/NavBar';
 import ItemListContainer from "./components/ItemListContainer";
 import ItemDetailContainer from "./components/ItemDetailContainer";
 import Cart from "./components/Cart";
+import Contact from "./components/Conctact";
+import Home from "./components/Home";
 
 
 function App() {
@@ -19,8 +21,9 @@ function App() {
         <Route path="/item/:id" element={<ItemDetailContainer />} />
         <Route path="/category/:category" element={<ItemListContainer />} />
 
+        <Route path="/home" element={<Home />} />
         <Route path="/cart" element={<Cart />} />
-        <Route path="/about" element={<h1>About</h1>} />
+        <Route path="/contact" element={<Contact/>} />
         <Route path="*" element={<ItemListContainer />} />
       </Routes>
     </BrowserRouter>
