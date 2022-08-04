@@ -3,12 +3,12 @@ import "primereact/resources/primereact.min.css";
 import "primeicons/primeicons.css";
 import './App.css';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import MenuNavBar from './components/NavBar';
-import ItemListContainer from "./components/ItemListContainer";
-import ItemDetailContainer from "./components/ItemDetailContainer";
-import Cart from "./components/Cart";
-import Contact from "./components/Conctact";
-import Home from "./components/Home";
+import MenuNavBar from './components/navbar';
+import ItemListContainer from "./components/item-list-container";
+import ItemDetailContainer from "./components/item-detail-container";
+import Cart from "./components/cart";
+import Contact from "./pages/conctact";
+import Home from "./pages/home";
 
 
 function App() {

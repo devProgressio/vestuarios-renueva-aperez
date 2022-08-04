@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
-import { data } from '../mock/FakeApi';
-import ItemDetail from './ItemDetail';
+import { data } from '../mock/fake-api';
+import ItemDetail from './item-detail';
 import { ProgressSpinner } from 'primereact/progressspinner';
 
 const ItemDetailContainer = () => {
@@ -11,7 +11,7 @@ const ItemDetailContainer = () => {
 
     useEffect(() => {
         data
-            .then((res) => setProducto(res.find((item) => item.id == id)))
+            .then((res) => setProducto(res.find((item) => item.id === id)))
             .catch((error) => console.log(error))
             .finally(() => setLoading(false));
     }, [id]);

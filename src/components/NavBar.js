@@ -1,5 +1,5 @@
 import { Menubar } from 'primereact/menubar';
-import CartWidget from './CartWidget';
+import CartWidget from './cart-widget';
 import images from '../assets/images';
 
 const MenuNavBar = (props) => {

@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
-import { data } from "../mock/FakeApi";
-import ItemList from "../components/ItemList";
+import { data } from "../mock/fake-api";
+import ItemList from "./item-list";
 import { ProgressSpinner } from 'primereact/progressspinner';
 
 const ItemListContainer = ({ greeting }) => {
