@@ -1,20 +1,28 @@
 import { useEffect, useState } from "react";
-import { data } from "../mock/fake-api";
+import { getProducts } from "../mock/fake-api";
 import ItemList from "./item-list";
 import { ProgressSpinner } from 'primereact/progressspinner';
+import { useParams } from "react-router-dom";
 
 const ItemListContainer = ({ greeting }) => {
     const [listaProductos, setListaProductos] = useState([]);
     const [mensaje, setMensaje] = useState(false);
     const [loading, setLoading] = useState(true);
+    const { category } = useParams();
 
     useEffect(() => {
         console.log('soy el useEffect')
-        data
-            .then((res) => setListaProductos(res))
+        getProducts
+            .then((res) => {
+                if (category) {
+                    setListaProductos(res.filter((product) => product.category === category));
+                } else {
+                    setListaProductos(res);
+                }
+            })
             .catch(() => setMensaje('hubo un error, intente mas tarde'))
             .finally(() => setLoading(false));
-    }, []);
+    }, [category]);
 
     const spinner = (
         <span>

@@ -2,7 +2,7 @@ import Item from './item';
 
 const ItemList = ({ listaProductos }) => {
     
-    if (listaProductos) {
+    if (listaProductos && listaProductos.length > 0) {
         /* style={{ display: 'flex', justifyContent: 'space-between', flexWrap: 'wrap' }}
         justify-content-center flex flex-wrap align-content-center */
         return (

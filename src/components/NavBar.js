@@ -8,13 +8,20 @@ const MenuNavBar = (props) => {
         {
             label: 'Inicio',
             icon: 'pi pi-fw pi-home',
-            url: '/home'
+            url: '/'
         },
         {
             label: 'Productos',
             icon: 'pi pi-fw pi-shopping-bag',
             items: [
-                { label: 'Categorías', icon: 'pi pi-fw pi-tags',url: '/', items: [{ label: 'Mujer', url: '/', },{ label: 'Hombre', url: '/', }] }
+                {   label: 'Categorías', icon: 'pi pi-fw pi-tags',
+                    url: '/product',
+                    items: [
+                        { label: 'Mujer', url: '/product/mujer', },
+                        { label: 'Hombre', url: '/product/hombre', },
+                        { label: 'Sin Producto Ejemplo', url: '/product/none-example', },
+                        ]
+                }
             ]
         },
         {

@@ -6,9 +6,9 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import MenuNavBar from './components/navbar';
 import ItemListContainer from "./components/item-list-container";
 import ItemDetailContainer from "./components/item-detail-container";
-import Cart from "./components/cart";
 import Contact from "./pages/conctact";
 import Home from "./pages/home";
+import Cart from "./pages/cart";
 
 
 function App() {
@@ -17,11 +17,10 @@ function App() {
       <MenuNavBar />
       <br />
       <Routes>
-        <Route path="/" element={<ItemListContainer greeting='MENSAJE' />} />
+        <Route path="/product/:category" element={<ItemListContainer greeting='MENSAJE' />} />
         <Route path="/item/:id" element={<ItemDetailContainer />} />
-        <Route path="/category/:category" element={<ItemListContainer />} />
 
-        <Route path="/home" element={<Home />} />
+        <Route path="/" element={<Home />} />
         <Route path="/cart" element={<Cart />} />
         <Route path="/contact" element={<Contact/>} />
         <Route path="*" element={<ItemListContainer />} />

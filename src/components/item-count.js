@@ -45,7 +45,7 @@ const ItemCount = ({ initial, stock, onAdd }) => {
             </div>
             <div className="field grid">
                 <div className="col">
-                    <Button onClick={() => {onAdd(contador); onLoadingClick();}} icon="pi pi-check" loading={loading} label="Agregar al carrito"/>
+                    <Button onClick={() => {onAdd(contador); onLoadingClick();}} icon="pi pi-check" loading={loading} label="Agregar al carrito" className='p-button-rounded'/>
                 </div>
             </div>
         </>
