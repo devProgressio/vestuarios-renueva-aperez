@@ -3,7 +3,7 @@ import CartWidget from './cart-widget';
 import images from '../assets/images';
 
 const MenuNavBar = (props) => {
-    console.log('Me renderice NAVBAR');
+    console.log('Me rendericé NAVBAR');
     const items = [
         {
             label: 'Inicio',
@@ -42,6 +42,7 @@ const MenuNavBar = (props) => {
     return (
         <div>
             <Menubar model={items} start={start} end={end} />
+            <br />
         </div>
     );
 }

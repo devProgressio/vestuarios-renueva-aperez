@@ -5,13 +5,13 @@ import ItemDetail from './item-detail';
 import { ProgressSpinner } from 'primereact/progressspinner';
 
 const ItemDetailContainer = () => {
-    const [producto, setProducto] = useState({});
+    const [product, setProduct] = useState({});
     const [loading, setLoading] = useState(true);
     const { id } = useParams();
 
     useEffect(() => {
         getProducts
-            .then((res) => setProducto(res.find((item) => item.id === id)))
+            .then((res) => setProduct(res.find((item) => item.id === id)))
             .catch((error) => console.log(error))
             .finally(() => setLoading(false));
     }, [id]);
@@ -25,7 +25,7 @@ const ItemDetailContainer = () => {
 
     return (
         <div>
-            {loading ? spinner : <ItemDetail producto={producto} />}
+            {loading ? spinner : <ItemDetail product={product} />}
         </div>
     );
 };

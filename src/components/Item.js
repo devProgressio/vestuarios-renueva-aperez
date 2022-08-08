@@ -19,7 +19,7 @@ const Item = ({ producto }) => {
     );
     const footer = (
         <Link to={`/item/${id}`}>
-            <Button label="Ver más" className="p-button-outlined p-button-secondary" />
+            <Button label="Ver más" className="p-button-outlined p-button-secondary p-button-sm" />
         </Link>
     );
 

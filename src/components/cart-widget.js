@@ -1,7 +1,10 @@
 import { Badge } from 'primereact/badge';
+import { useContext } from 'react';
+import { CartContext } from '../context/cart-context';
 
 const CartWidget = () => {
-
+    const context = useContext(CartContext);
+    console.log(context);
     return (
         <>
         {/* <Button type="button" icon="pi pi-shopping-cart" className="p-button-warning" badge="8" badgeClassName="p-badge-danger" /> */}
