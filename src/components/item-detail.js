@@ -21,10 +21,11 @@ const ItemDetail = ({ product }) => {
         toastBR.current.show({severity:'success', summary: 'Se agregó producto al carro', detail:`${mens}`, life: 3000});
     }
 
-    const onAdd = (c) => {
-        console.log('handle add: ', count);
-        setCount(count);
-        setMessage(`Se agregó la cantidad de ${c} del producto ${name} a su carro de compras`);
+    const onAdd = (quality) => {
+        console.log('handle add: ', quality);
+        console.log('count', count);
+        setCount(quality);
+        setMessage(`Se agregó la cantidad de ${quality} del producto ${name} a su carro de compras`);
         showBottomRight(message);
     }
 
