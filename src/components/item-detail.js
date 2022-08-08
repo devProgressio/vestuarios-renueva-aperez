@@ -17,15 +17,15 @@ const ItemDetail = ({ product }) => {
     const [count, setCount] = useState(0);
     const toastBR = useRef(null);
 
-    const showBottomRight = () => {
-        toastBR.current.show({severity:'success', summary: 'Se agregó producto al carro', detail:`Se agregó la cantidad de ${count} del producto ${name} a su carro de compras`, life: 3000});
+    const showBottomRight = (mens) => {
+        toastBR.current.show({severity:'success', summary: 'Se agregó producto al carro', detail:`${mens}`, life: 3000});
     }
 
-    const onAdd = (count) => {
+    const onAdd = (c) => {
         console.log('handle add: ', count);
         setCount(count);
-        setMessage(`Agregaste ${count} items en el carrito`);
-        showBottomRight();
+        setMessage(`Se agregó la cantidad de ${c} del producto ${name} a su carro de compras`);
+        showBottomRight(message);
     }
 
     const rating = (
