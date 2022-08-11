@@ -3,18 +3,22 @@ import { Panel } from 'primereact/panel';
 import { Image } from 'primereact/image';
 import { Rating } from 'primereact/rating';
 import { Chip } from 'primereact/chip';
-import { useContext, useRef, useState } from "react";
+import { useRef, useState } from "react";
 import { Button } from "primereact/button";
 import { Link } from "react-router-dom";
-import { CartContext } from "../context/cart-context";
 import { Toast } from 'primereact/toast';
+import { useCartContext } from "../context/cart-context";
 
 const ItemDetail = ({ product }) => {
-    console.log("ITEM", product);
+
+    const {addProduct} = useCartContext();
+
+    const [count, setCount] = useState(0);
+
     const { name, description, price, img, hashtags, stock } = product;
     const [val, setVal] = useState(null);
     const [message, setMessage] = useState(false);
-    const [count, setCount] = useState(0);
+
     const toastBR = useRef(null);
 
     const showBottomRight = (mens) => {
@@ -26,7 +30,7 @@ const ItemDetail = ({ product }) => {
         console.log('count', count);
         setCount(quality);
         setMessage(`Se agregó la cantidad de ${quality} del producto ${name} a su carro de compras`);
-        showBottomRight(message);
+        addProduct(product, quality);
     }
 
     const rating = (
