@@ -10,7 +10,7 @@ const CartProvider = ({ children }) => {
     const addProduct = (data, quality) => {
         if (isInCart(data.id)) {
             setCart(cart.map(product => {
-                return product.id === data.id ? { ...product, cantidad: product.cantidad + quality } : product;
+                return product.id === data.id ? { ...product, quality: product.quality + quality } : product;
             }));
         } else {
             setCart([...cart, { ...data, quality }])
@@ -18,18 +18,18 @@ const CartProvider = ({ children }) => {
     }
 
     const totalPrice = () => {
-        return cart.reduce((prev, act) => prev + act.cantidad * act.price, 0)
+        return cart.reduce((prev, act) => prev + act.quality * act.price, 0)
     }
 
-    const totalProducts = () => {
-        cart.reduce((acumulador, juegoActual) => acumulador + juegoActual.cantidad, 0);
-    };
+    const cantInCart = () => {
+        return cart.reduce((prev, act) => (prev += act.quantity), 0);
+      };
 
-    const clearCart = () => setCart([])
+    const clearCart = () => setCart([]);
 
-    const isInCart = (id) => { return cart.some(juego => juego.id === id) ? true : false }
+    const isInCart = (id) => { return cart.some(product => product.id === id) ? true : false };
 
-    const removeProduct = (id) => setCart(cart.filter(juego => juego.id !== id))
+    const removeProduct = (id) => setCart(cart.filter(product => product.id !== id));
 
     return (
         <CartContext.Provider value={{
@@ -38,7 +38,7 @@ const CartProvider = ({ children }) => {
             removeProduct,
             addProduct,
             totalPrice,
-            totalProducts,
+            quantityInCart: cart.length,
             cart
         }}>
             {children}

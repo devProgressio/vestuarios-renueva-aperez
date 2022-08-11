@@ -13,23 +13,19 @@ const ItemDetail = ({ product }) => {
 
     const {addProduct} = useCartContext();
 
-    const [count, setCount] = useState(0);
-
     const { name, description, price, img, hashtags, stock } = product;
     const [val, setVal] = useState(null);
-    const [message, setMessage] = useState(false);
+    // const [message, setMessage] = useState(false);
 
     const toastBR = useRef(null);
 
-    const showBottomRight = (mens) => {
+/*     const showBottomRight = (mens) => {
         toastBR.current.show({severity:'success', summary: 'Se agregó producto al carro', detail:`${mens}`, life: 3000});
-    }
+    } */
 
     const onAdd = (quality) => {
-        console.log('handle add: ', quality);
-        console.log('count', count);
-        setCount(quality);
-        setMessage(`Se agregó la cantidad de ${quality} del producto ${name} a su carro de compras`);
+        console.log('onAdd: ', quality);
+        //setMessage(`Se agregó la cantidad de ${quality} del producto ${name} a su carro de compras`);
         addProduct(product, quality);
     }
 
