@@ -3,15 +3,15 @@ import { Panel } from 'primereact/panel';
 import { Image } from 'primereact/image';
 import { Rating } from 'primereact/rating';
 import { Chip } from 'primereact/chip';
-import { useRef, useState } from "react";
+import { useContext, useRef, useState } from "react";
 import { Button } from "primereact/button";
 import { Link } from "react-router-dom";
 import { Toast } from 'primereact/toast';
-import { useCartContext } from "../context/cart-context";
+import { CART_CONTEXT } from "../context/cart-context";
 
 const ItemDetail = ({ product }) => {
 
-    const {addProduct} = useCartContext();
+    const {addProduct} = useContext(CART_CONTEXT);
 
     const { name, description, price, img, hashtags, stock } = product;
     const [val, setVal] = useState(null);

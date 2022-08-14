@@ -1,8 +1,6 @@
-import React, { useContext, useState } from "react";
+import { createContext, useState } from "react";
 
-const CartContext = React.createContext([]);
-
-export const useCartContext = () => useContext(CartContext);
+export const CART_CONTEXT = createContext({});
 
 const CartProvider = ({ children }) => {
     const [cart, setCart] = useState([]);
@@ -21,9 +19,9 @@ const CartProvider = ({ children }) => {
         return cart.reduce((prev, act) => prev + act.quality * act.price, 0)
     }
 
-    const cantInCart = () => {
-        return cart.reduce((prev, act) => (prev += act.quantity), 0);
-      };
+    /*     const cantInCart = () => {
+            return cart.reduce((prev, act) => (prev += act.quantity), 0);
+          }; */
 
     const clearCart = () => setCart([]);
 
@@ -31,18 +29,19 @@ const CartProvider = ({ children }) => {
 
     const removeProduct = (id) => setCart(cart.filter(product => product.id !== id));
 
+    const valueContext = {
+        clearCart,
+        isInCart,
+        removeProduct,
+        addProduct,
+        totalPrice,
+        quantityInCart: cart.length,
+        cart
+    };
     return (
-        <CartContext.Provider value={{
-            clearCart,
-            isInCart,
-            removeProduct,
-            addProduct,
-            totalPrice,
-            quantityInCart: cart.length,
-            cart
-        }}>
+        <CART_CONTEXT.Provider value={valueContext}>
             {children}
-        </CartContext.Provider>
+        </CART_CONTEXT.Provider>
     )
 }
 
