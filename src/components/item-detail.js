@@ -11,22 +11,24 @@ import { CART_CONTEXT } from "../context/cart-context";
 
 const ItemDetail = ({ product }) => {
 
-    const {addProduct} = useContext(CART_CONTEXT);
+    const { addProduct } = useContext(CART_CONTEXT);
 
     const { name, description, price, img, hashtags, stock } = product;
     const [val, setVal] = useState(null);
+    const [terminar, setTerminar] = useState(false);
     // const [message, setMessage] = useState(false);
 
     const toastBR = useRef(null);
 
-/*     const showBottomRight = (mens) => {
-        toastBR.current.show({severity:'success', summary: 'Se agregó producto al carro', detail:`${mens}`, life: 3000});
-    } */
+    /*     const showBottomRight = (mens) => {
+            toastBR.current.show({severity:'success', summary: 'Se agregó producto al carro', detail:`${mens}`, life: 3000});
+        } */
 
-    const onAdd = (quality) => {
-        console.log('onAdd: ', quality);
-        //setMessage(`Se agregó la cantidad de ${quality} del producto ${name} a su carro de compras`);
-        addProduct(product, quality);
+    const onAdd = (quantity) => {
+        console.log('onAdd: ', quantity);
+        //setMessage(`Se agregó la cantidad de ${quantity} del producto ${name} a su carro de compras`);
+        addProduct(product, quantity);
+        setTerminar(true);
     }
 
     const rating = (
@@ -42,6 +44,14 @@ const ItemDetail = ({ product }) => {
             </div>
         </div>
     );
+
+    const botonTerminarCompra = (
+        <span>
+            <Link to={`/cart`}>
+                <Button label="Terminar compra" className="p-button-outlined p-button-rounded p-button-sm"></Button>
+            </Link>
+        </span>
+    )
 
     return (
         <div className="grid">
@@ -71,8 +81,9 @@ const ItemDetail = ({ product }) => {
                                     {/* {message && <p>{message}</p>} */}
                                     <br></br>
                                     <Link to={`/cart`}>
-                                        <Button label="Ir al Carrito" className="p-button-outlined p-button-rounded p-button-sm"></Button>
+                                        <Button label="Ir al Carrito" className="p-button-outlined p-button-rounded p-button-sm mr-2"></Button>
                                     </Link>
+                                    { terminar ? botonTerminarCompra : null }
                                 </div>
                             </div>
                         </div>

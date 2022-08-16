@@ -14,8 +14,8 @@ import CartProvider from "./context/cart-context";
 
 function App() {
   return (
-    <CartProvider>
-      <BrowserRouter>
+    <BrowserRouter>
+      <CartProvider>
         {/* basename='/v-renueva' */}
         <MenuNavBar />
         <Routes>
@@ -27,8 +27,8 @@ function App() {
           <Route path='/contact' element={<Contact />} />
           <Route path='*' element={<ItemListContainer />} />
         </Routes>
-      </BrowserRouter>
-    </CartProvider>
+      </CartProvider>
+    </BrowserRouter>
   );
 }
 

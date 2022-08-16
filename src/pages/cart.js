@@ -14,7 +14,9 @@ const Cart = () => {
         return (
             <>
                 <p> No hay Productos en su carrito</p>
-                <Link to='/product'> Hacer Compras</Link>
+                <Link to={`/product`}>
+                    <Button label="Seguir comprando" className="p-button-outlined p-button-rounded p-button-sm"></Button>
+                </Link>
             </>
         );
     }
@@ -50,7 +52,7 @@ const Cart = () => {
         return (
             <div class="grid">
                 <div class="col-3">
-                    <Image src={item.img} alt={item.img} width="140" preview onError={(e) => e.target.src = 'https://www.primefaces.org/wp-content/uploads/2020/05/placeholder.png'}/>
+                    <Image src={item.img} alt={item.img} width="140" preview onError={(e) => e.target.src = 'https://www.primefaces.org/wp-content/uploads/2020/05/placeholder.png'} />
                 </div>
                 <div class="col-8">
                     <div class="grid">
@@ -59,11 +61,12 @@ const Cart = () => {
                             <span className="mb-2">{item?.category}</span>
                         </div>
                         <div class="col-6">
-                        <h6 className="mb-2">${item?.price}</h6>
-                                <span className={`product-badge status-${item.stock < 10 ? 'lowstock' : 'instock'}`}>{item.stock < 10 ? 'STOCK BAJO' : 'CON STOCK'}</span>
+                            <p>cantidad: {item?.quantity}</p>
+                            <h6 className="mb-2">${item?.price}</h6>
+                            <span className={`product-badge status-${item.stock < 10 ? 'lowstock' : 'instock'}`}>{item.stock < 10 ? 'STOCK BAJO' : 'CON STOCK'}</span>
                         </div>
                         <div class="col-12">
-                            <Button label="Eliminar" onClick={() => removeProduct(item.id)} className="mb-2"/>
+                            <Button label="Eliminar" onClick={() => removeProduct(item.id)} className="mb-2" />
                         </div>
                     </div>
                 </div>
@@ -114,6 +117,9 @@ const Cart = () => {
             <div className='col'>
                 <h1>Total: {totalPrice()}</h1>
             </div>
+            <Link to={`/product`}>
+                    <Button label="Seguir comprando" className="p-button-outlined p-button-rounded p-button-sm"></Button>
+            </Link>
         </div>
     )
 }

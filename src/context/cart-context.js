@@ -5,18 +5,18 @@ export const CART_CONTEXT = createContext({});
 const CartProvider = ({ children }) => {
     const [cart, setCart] = useState([]);
 
-    const addProduct = (data, quality) => {
+    const addProduct = (data, quantity) => {
         if (isInCart(data.id)) {
             setCart(cart.map(product => {
-                return product.id === data.id ? { ...product, quality: product.quality + quality } : product;
+                return product.id === data.id ? { ...product, quantity: product.quantity + quantity } : product;
             }));
         } else {
-            setCart([...cart, { ...data, quality }])
+            setCart([...cart, { ...data, quantity }])
         }
     }
 
     const totalPrice = () => {
-        return cart.reduce((prev, act) => prev + act.quality * act.price, 0)
+        return cart.reduce((prev, act) => prev + act.quantity * act.price, 0)
     }
 
     /*     const cantInCart = () => {
@@ -29,6 +29,9 @@ const CartProvider = ({ children }) => {
 
     const removeProduct = (id) => setCart(cart.filter(product => product.id !== id));
 
+    const cantInCart = cart.reduce((previous, product) => previous + product.quantity, 0);
+
+
     const valueContext = {
         clearCart,
         isInCart,
@@ -36,6 +39,7 @@ const CartProvider = ({ children }) => {
         addProduct,
         totalPrice,
         quantityInCart: cart.length,
+        cantInCart,
         cart
     };
     return (

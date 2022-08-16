@@ -25,11 +25,6 @@ const MenuNavBar = (props) => {
             ]
         },
         {
-            label: 'Cart',
-            icon: 'pi pi-fw pi-pencil',
-            url: '/cart'
-        },
-        {
             label: 'Contacto',
             icon: 'pi pi-fw pi-user',
             url: '/contact'
