@@ -38,14 +38,14 @@ const ItemCount = ({ initial, stock, onAdd }) => {
                     {knobContador}
                 </div>
                 <div className="col">
-                    <Button disabled={contador <= 1} icon="pi pi-minus" onClick={restar} className="p-button-sm"/>
+                    <Button disabled={contador <= 1} icon="pi pi-minus" onClick={restar} className="p-button-sm" />
                     &nbsp;
                     <Button disabled={contador >= stock} icon="pi pi-plus" onClick={sumar} className="p-button-sm" />
                 </div>
             </div>
             <div className="field grid">
                 <div className="col">
-                    <Button onClick={() => {onAdd(contador); onLoadingClick();}} icon="pi pi-check" loading={loading} label="Agregar al carrito" className='p-button-rounded className="p-button-sm"'/>
+                    <Button onClick={() => { onAdd(contador); onLoadingClick(); }} icon="pi pi-check" loading={loading} label="Agregar al carrito" className='p-button-rounded className="p-button-sm"' />
                 </div>
             </div>
         </>

@@ -7,7 +7,7 @@ const ItemList = ({ listaProductos }) => {
         justify-content-center flex flex-wrap align-content-center */
         return (
             <div className='grid formgrid'>
-                {listaProductos.map((producto) => <Item key={producto.id} producto={producto} />)}
+                {listaProductos.map((product) => <Item key={product.id} product={product} />)}
             </div>
         );
     } else {

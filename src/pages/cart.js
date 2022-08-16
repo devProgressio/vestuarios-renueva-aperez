@@ -50,22 +50,22 @@ const Cart = () => {
 
     const itemTemplate = (item) => {
         return (
-            <div class="grid">
-                <div class="col-3">
+            <div className="grid">
+                <div className="col-3">
                     <Image src={item.img} alt={item.img} width="140" preview onError={(e) => e.target.src = 'https://www.primefaces.org/wp-content/uploads/2020/05/placeholder.png'} />
                 </div>
-                <div class="col-8">
-                    <div class="grid">
-                        <div class="col-6">
+                <div className="col-8">
+                    <div className="grid">
+                        <div className="col-6">
                             <i className="pi pi-tag"></i>
                             <span className="mb-2">{item?.category}</span>
                         </div>
-                        <div class="col-6">
+                        <div className="col-6">
                             <p>cantidad: {item?.quantity}</p>
                             <h6 className="mb-2">${item?.price}</h6>
                             <span className={`product-badge status-${item.stock < 10 ? 'lowstock' : 'instock'}`}>{item.stock < 10 ? 'STOCK BAJO' : 'CON STOCK'}</span>
                         </div>
-                        <div class="col-12">
+                        <div className="col-12">
                             <Button label="Eliminar" onClick={() => removeProduct(item.id)} className="mb-2" />
                         </div>
                     </div>

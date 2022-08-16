@@ -1,25 +1,37 @@
 import { Menubar } from 'primereact/menubar';
 import CartWidget from './cart-widget';
 import images from '../assets/images';
+import { useNavigate } from 'react-router-dom';
 
 const MenuNavBar = (props) => {
     console.log('Me rendericé NAVBAR');
+    const navigate = useNavigate();
     const items = [
         {
             label: 'Inicio',
             icon: 'pi pi-fw pi-home',
-            url: '/'
+            command: (event) => {
+                navigate('/');
+            }
         },
         {
             label: 'Productos',
             icon: 'pi pi-fw pi-shopping-bag',
             items: [
                 {   label: 'Categorías', icon: 'pi pi-fw pi-tags',
-                    url: '/product',
+                    command: (event) => {
+                        navigate('/product');
+                    },
                     items: [
-                        { label: 'Mujer', url: '/product/mujer', },
-                        { label: 'Hombre', url: '/product/hombre', },
-                        { label: 'Sin Producto Ejemplo', url: '/product/none-example', },
+                        { label: 'Mujer', command: (event) => {
+                            navigate('/product/mujer');
+                        } },
+                        { label: 'Hombre', command: (event) => {
+                            navigate('/product/hombre');
+                        } },
+                        { label: 'Sin Producto Ejemplo', command: (event) => {
+                            navigate('/product/none-example');
+                        } },
                         ]
                 }
             ]
@@ -27,7 +39,9 @@ const MenuNavBar = (props) => {
         {
             label: 'Contacto',
             icon: 'pi pi-fw pi-user',
-            url: '/contact'
+            command: (event) => {
+                navigate('/contact');
+            }
         }
     ];
     

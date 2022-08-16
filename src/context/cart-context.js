@@ -1,15 +1,19 @@
-import { createContext, useState } from "react";
+import { Toast } from "primereact/toast";
+import { createContext, useRef, useState } from "react";
 
 export const CART_CONTEXT = createContext({});
 
 const CartProvider = ({ children }) => {
+    const toastBR = useRef(null);
     const [cart, setCart] = useState([]);
 
     const addProduct = (data, quantity) => {
         if (isInCart(data.id)) {
-            setCart(cart.map(product => {
-                return product.id === data.id ? { ...product, quantity: product.quantity + quantity } : product;
-            }));
+            if (checkStock(data, quantity)) {
+                setCart(cart.map(product => {
+                    return product.id === data.id ? { ...product, quantity: product.quantity + quantity } : product;
+                }));
+            }
         } else {
             setCart([...cart, { ...data, quantity }])
         }
@@ -19,10 +23,6 @@ const CartProvider = ({ children }) => {
         return cart.reduce((prev, act) => prev + act.quantity * act.price, 0)
     }
 
-    /*     const cantInCart = () => {
-            return cart.reduce((prev, act) => (prev += act.quantity), 0);
-          }; */
-
     const clearCart = () => setCart([]);
 
     const isInCart = (id) => { return cart.some(product => product.id === id) ? true : false };
@@ -31,6 +31,18 @@ const CartProvider = ({ children }) => {
 
     const cantInCart = cart.reduce((previous, product) => previous + product.quantity, 0);
 
+    const checkStock = (data, quantity) => {
+        const productInCart = cart.find(product => product.id = data.id);
+        const newQuantity = productInCart.quantity + quantity;
+        if (newQuantity > productInCart.stock) {
+            console.log('Supera el stock');
+            toastBR.current.show({ severity: 'error', summary: 'Sobrepasa el stock', detail: 'La cantidad ingresada sobrepasa el stock existente', life: 4000 });
+            return false;
+        } else {
+            return true;
+        }
+
+    }
 
     const valueContext = {
         clearCart,
@@ -43,9 +55,12 @@ const CartProvider = ({ children }) => {
         cart
     };
     return (
-        <CART_CONTEXT.Provider value={valueContext}>
-            {children}
-        </CART_CONTEXT.Provider>
+        <>
+            <Toast ref={toastBR} position="bottom-right" />
+            <CART_CONTEXT.Provider value={valueContext}>
+                {children}
+            </CART_CONTEXT.Provider>
+        </>
     )
 }
 
