@@ -12,7 +12,6 @@ import { CART_CONTEXT } from "../context/cart-context";
 const ItemDetail = ({ product }) => {
 
     const { addProduct } = useContext(CART_CONTEXT);
-
     const { name, description, price, img, hashtags, stock } = product;
     const [val, setVal] = useState(null);
     const [terminar, setTerminar] = useState(false);

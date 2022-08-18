@@ -8,7 +8,7 @@ import { Image } from 'primereact/image';
 import { Steps } from 'primereact/steps';
 
 const Cart = () => {
-    const { cart, totalPrice, removeProduct } = useContext(CART_CONTEXT);
+    const { cart, totalPrice, removeProduct, clearCart } = useContext(CART_CONTEXT);
 
     if (cart.length === 0) {
         return (
@@ -116,10 +116,12 @@ const Cart = () => {
             <p> Total: ${totalPrice()}</p> */}
             <div className='col'>
                 <h1>Total: {totalPrice()}</h1>
-            </div>
-            <Link to={`/product`}>
+                <Button onClick={() => clearCart()} label="limpiar Carrito" className="p-button-outlined p-button-rounded p-button-sm mr-2"></Button>
+                <Link to={`/product`}>
                     <Button label="Seguir comprando" className="p-button-outlined p-button-rounded p-button-sm"></Button>
-            </Link>
+                </Link>
+            </div>
+            
         </div>
     )
 }
