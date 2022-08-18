@@ -8,11 +8,11 @@ import { CART_CONTEXT } from '../context/cart-context';
 
 
 const Item = ({ product }) => {
+    const { id, img, name, price, stock } = product;
+
     const { addProduct } = useContext(CART_CONTEXT);
-    
     const [terminar, setTerminar] = useState(false);
     const [mensaje, setMensaje] = useState(false);
-    const { id, img, name, price, stock } = product;
 
     const onAdd = (quantity) => {
         console.log('onAdd: ', quantity);

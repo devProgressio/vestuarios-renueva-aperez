@@ -11,7 +11,6 @@ import Home from "./pages/home";
 import Cart from "./pages/cart";
 import CartProvider from "./context/cart-context";
 
-
 function App() {
   return (
     <BrowserRouter>

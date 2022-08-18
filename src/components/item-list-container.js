@@ -1,8 +1,9 @@
 import { useEffect, useState } from "react";
-import { getProducts } from "../mock/fake-api";
 import ItemList from "./item-list";
 import { ProgressSpinner } from 'primereact/progressspinner';
 import { useParams } from "react-router-dom";
+import { collection, getDocs, query, where } from "firebase/firestore";
+import { DB } from "../config/firebase";
 
 const ItemListContainer = ({ greeting }) => {
     const [listaProductos, setListaProductos] = useState([]);
@@ -11,17 +12,22 @@ const ItemListContainer = ({ greeting }) => {
     const { category } = useParams();
 
     useEffect(() => {
-        console.log('soy el useEffect')
-        getProducts
-            .then((res) => {
-                if (category) {
-                    setListaProductos(res.filter((product) => product.category === category));
-                } else {
-                    setListaProductos(res);
+        const COLLECTION_PRODUCTS = collection(DB, "products");
+        const WHERE_CATEGORY = where("category", "==", category);
+        const QUERY_PRODUCTS = category ? query(COLLECTION_PRODUCTS, WHERE_CATEGORY) : COLLECTION_PRODUCTS;
+
+        getDocs(QUERY_PRODUCTS).then((result) => {
+            const PRODUCTS = result.docs.map((product) => {
+                return {
+                    id: product.id,
+                    ...product.data()
                 }
-            })
-            .catch(() => setMensaje('hubo un error, intente mas tarde'))
+            });
+            setListaProductos(PRODUCTS);
+
+        }).catch((error) => { setMensaje('hubo un error, intente mas tarde') })
             .finally(() => setLoading(false));
+
     }, [category]);
 
     const spinner = (
@@ -33,7 +39,6 @@ const ItemListContainer = ({ greeting }) => {
 
     return (
         <div className="fluid">
-            {/* <h3>{greeting}</h3> */}
             {mensaje && <p>{mensaje}</p>}
             {loading ? spinner : <ItemList listaProductos={listaProductos} />}
         </div>
