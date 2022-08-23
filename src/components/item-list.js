@@ -6,7 +6,7 @@ const ItemList = ({ listaProductos }) => {
         /* style={{ display: 'flex', justifyContent: 'space-between', flexWrap: 'wrap' }}
         justify-content-center flex flex-wrap align-content-center */
         return (
-            <div className='grid formgrid'>
+            <div className='grid formgrid pl-5'>
                 {listaProductos.map((product) => <Item key={product.id} product={product} />)}
             </div>
         );

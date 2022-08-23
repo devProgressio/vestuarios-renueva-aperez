@@ -21,6 +21,14 @@ const Cart = () => {
         );
     }
 
+    const botonTerminarCompra = (
+        <span>
+            <Link to={`/checkout`}>
+                <Button label="Terminar compra" className="p-button-outlined p-button-rounded p-button-sm"></Button>
+            </Link>
+        </span>
+    )
+
     const items = [
         {
             label: 'Productos',
@@ -117,9 +125,11 @@ const Cart = () => {
             <div className='col'>
                 <h1>Total: {totalPrice()}</h1>
                 <Button onClick={() => clearCart()} label="limpiar Carrito" className="p-button-outlined p-button-rounded p-button-sm mr-2"></Button>
+                {/* TODO: quitar los Link y agrega el navegate, para poder dar estilo al button. */}
                 <Link to={`/product`}>
                     <Button label="Seguir comprando" className="p-button-outlined p-button-rounded p-button-sm"></Button>
                 </Link>
+                {botonTerminarCompra}
             </div>
             
         </div>

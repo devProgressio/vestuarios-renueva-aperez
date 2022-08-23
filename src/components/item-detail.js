@@ -46,7 +46,7 @@ const ItemDetail = ({ product }) => {
 
     const botonTerminarCompra = (
         <span>
-            <Link to={`/cart`}>
+            <Link to={`/checkout`}>
                 <Button label="Terminar compra" className="p-button-outlined p-button-rounded p-button-sm"></Button>
             </Link>
         </span>

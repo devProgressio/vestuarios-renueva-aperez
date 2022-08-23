@@ -10,6 +10,7 @@ import Contact from "./pages/contact";
 import Home from "./pages/home";
 import Cart from "./pages/cart";
 import CartProvider from "./context/cart-context";
+import Checkout from "./pages/checkout";
 
 function App() {
   return (
@@ -22,6 +23,7 @@ function App() {
           <Route path='/item/:id' element={<ItemDetailContainer />} />
 
           <Route path='/' element={<Home />} />
+          <Route path='/checkout' element={<Checkout />} />
           <Route path='/cart' element={<Cart />} />
           <Route path='/contact' element={<Contact />} />
           <Route path='*' element={<ItemListContainer />} />

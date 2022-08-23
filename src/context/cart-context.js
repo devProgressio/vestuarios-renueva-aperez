@@ -1,5 +1,5 @@
 import { Toast } from "primereact/toast";
-import { createContext, useRef, useState } from "react";
+import { createContext, useContext, useRef, useState } from "react";
 
 export const CART_CONTEXT = createContext({});
 
@@ -30,6 +30,9 @@ const CartProvider = ({ children }) => {
     const removeProduct = (id) => setCart(cart.filter(product => product.id !== id));
 
     const cantInCart = cart.reduce((previous, product) => previous + product.quantity, 0);
+
+
+    
 
     const checkStock = (data, quantity) => {
         const productInCart = cart.find(product => product.id = data.id);
@@ -65,48 +68,4 @@ const CartProvider = ({ children }) => {
 }
 
 export default CartProvider;
-
-
-
-
-
-
-/* import { createContext, useState } from 'react';
-
-export const CartContext = createContext({});
-
-const CartProvider = ({ children }) => {
-    const [cart, setCart] = useState([]);
-
-    const addToCart = (product, quantity) => {
-        const addItem = { ...product, quantity: quantity };
-        // searchItem(product);
-        const isInCart = cart.some((e) => e.id === product.id);
-        return isInCart ? cart.splice(searchItem, 1, addItem) : setCart([...cart, addItem]);
-    }
-
-    const removeItem = (product) => {
-        cart.splice(searchItem(product), 1);
-        return setCart([...cart]);
-    }
-
-    const searchItem = (product) => cart.findIndex((e) => e.id === product.id);
-
-    const clearCart = () => setCart([]);
-
-    const valueToShare = {
-        cart,
-        addToCart,
-        clearCart,
-        removeItem,
-        quantityInCart: cart.length
-    };
-
-    return (
-        <CartContext.Provider value={valueToShare}>
-            {children}
-        </CartContext.Provider>
-    );
-}
-
-export default CartProvider; */
+export const useCart = () => useContext(CART_CONTEXT);
