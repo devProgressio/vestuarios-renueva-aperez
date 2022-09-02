@@ -12,7 +12,7 @@ const ItemList = ({ listaProductos }) => {
         );
     } else {
         return (
-            <div>
+            <div className='text-center'>
                 <h1>NO EXISTE LISTA DE PRODUCTOS</h1>
             </div>
         ); 

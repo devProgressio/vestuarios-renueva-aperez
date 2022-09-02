@@ -6,6 +6,7 @@ import { useNavigate } from 'react-router-dom';
 import { DB } from '../config/firebase';
 import { useCart } from '../context/cart-context';
 import { InputMask } from 'primereact/inputmask';
+import { Card } from 'primereact/card';
 
 const Checkout = () => {
     const navegate = useNavigate();
@@ -77,10 +78,22 @@ const Checkout = () => {
                     </div>
                 </form>
                 :
-                <div>
-                    <h2>Muchas gracias por su compra!</h2>
-                    <h3>Su Identificador de orden es: {orderId}</h3>
-                    <Button label="Volver a comprar" onClick={() => navegate('/products')} />
+                /*                 <div>
+                                    <h2>Muchas gracias por su compra!</h2>
+                                    <h3>Su Identificador de orden es: {orderId}</h3>
+                                    <Button label="Volver a comprar" onClick={() => navegate('/product')} />
+                                </div> */
+
+                <div className='grid justify-content-center'>
+                    <div className='col-6 text-center'>
+                        <Card style={{ width: 'auto' }}>
+                            <i className="pi pi-heart p-text-secondary text-8xl text-teal-300 scalein animation-duration-3000 animation-iteration-infinite" />
+                            <p className='text-3xl font-italic'> Muchas gracias por su compra !</p>
+                            <p className='text-3xl font-italic'> Su Identificador de orden es:</p>
+                            <p className='font-bold text-5xl shadow-8'>{orderId}</p>
+                            <Button label="Descubrir Más Productos" className="p-button-outlined p-button-rounded p-button-lg" onClick={() => navegate('/product')}></Button>
+                        </Card>
+                    </div>
                 </div>
 
             }</>

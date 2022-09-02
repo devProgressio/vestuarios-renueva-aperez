@@ -45,12 +45,12 @@ const MenuNavBar = (props) => {
         }
     ];
     
-    const start = <img src={images.logo1} alt={images.logo1} height="50" className="mr-2"></img>;
+    const start = <img src={images.logo1} alt={images.logo1} height="70" className="mr-2"></img>;
     const end = <CartWidget />;
 
     return (
         <div>
-            <Menubar model={items} start={start} end={end} />
+            <Menubar model={items} start={start} end={end}  className="border-noround surface-0 bg-teal-50"/>
             <br />
         </div>
     );

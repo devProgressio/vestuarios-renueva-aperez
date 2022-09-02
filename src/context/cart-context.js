@@ -7,7 +7,7 @@ const CartProvider = ({ children }) => {
     const toastBR = useRef(null);
     const [cart, setCart] = useState([]);
 
-    const addProduct = (data, quantity) => {
+    const addProduct = (data, quantity, size) => {
         if (isInCart(data.id)) {
             if (checkStock(data, quantity)) {
                 setCart(cart.map(product => {
@@ -15,7 +15,7 @@ const CartProvider = ({ children }) => {
                 }));
             }
         } else {
-            setCart([...cart, { ...data, quantity }])
+            setCart([...cart, { ...data, quantity, size }])
         }
     }
 

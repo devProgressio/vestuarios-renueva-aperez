@@ -1,0 +1,9 @@
+.status-lowstock {
+    color: red;
+    font-style: italic;
+}
+
+.status-instock {
+    color: green;
+    font-style: italic;
+}
