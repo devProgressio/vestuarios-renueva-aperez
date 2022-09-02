@@ -8,10 +8,10 @@ const CartProvider = ({ children }) => {
     const [cart, setCart] = useState([]);
 
     const addProduct = (data, quantity, size) => {
-        if (isInCart(data.id)) {
+        if (isInCart(data.id, size)) {
             if (checkStock(data, quantity)) {
                 setCart(cart.map(product => {
-                    return product.id === data.id ? { ...product, quantity: product.quantity + quantity } : product;
+                    return product.id === data.id && product.size === size ? { ...product, quantity: product.quantity + quantity } : product;
                 }));
             }
         } else {
@@ -25,7 +25,7 @@ const CartProvider = ({ children }) => {
 
     const clearCart = () => setCart([]);
 
-    const isInCart = (id) => { return cart.some(product => product.id === id) ? true : false };
+    const isInCart = (id, size) => { return cart.some(product => product.id === id && product.size === size) ? true : false };
 
     const removeProduct = (id) => setCart(cart.filter(product => product.id !== id));
 

@@ -18,15 +18,10 @@ const ItemDetail = ({ product }) => {
     const { name, description, price, img, hashtags, stock } = product;
     const [val, setVal] = useState(null);
     const [terminar, setTerminar] = useState(false);
-    const [size, setSize] = useState('');
-    const [quantity, setQuantity] = useState(1);
+    const [size, setSize] = useState('XS');
     const toastBR = useRef(null);
 
-    const onAddQuantity = (quantity) => {
-        setQuantity(quantity);
-    }
-
-    const onAddCarro = (quantity, size) => {
+    const onAdd = (quantity, size) => {
         console.log('onAdd: ', quantity);
         addProduct(product, quantity, size);
         setTerminar(true);
@@ -74,16 +69,16 @@ const ItemDetail = ({ product }) => {
                                     {rating}
                                     <div className="font-light"> {description}</div>
                                     <hr className="opacity-40 mb-4" />
-                                    <div className="font-bold text-3xl text-teal-200">$ {formatNumber(price)}</div>
+                                    <div className="font-bold text-5xl text-teal-200">$ {formatNumber(price)}</div>
                                     <span className="text-xs opacity-70">Hasta agotar stock</span>
                                 </div>
                                 <div className="col-12">
-                                    <span className="col p-5">
+                                    <span className="col">
                                         <Dropdown value={size} options={SIZES} onChange={(e) => setSize(e.value)} placeholder="Talla" optionLabel="code" optionValue="code"
-                                            style={{ width: '40em' }} inputId="size"/>
+                                            style={{ width: '30em' }} inputId="size"/>
                                     </span>
                                     <span className="mr-2">
-                                        <ItemCount stock={stock} initial={1} onAdd={onAddQuantity} size={size} />
+                                        <ItemCount stock={stock} initial={1} onAdd={onAdd} size={size} />
                                     </span>
                                     
                                     <div className="text-xs font-italic opacity-70 mb-6">Quedan aproximadamente {stock} en stock</div>

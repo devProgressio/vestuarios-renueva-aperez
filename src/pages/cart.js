@@ -84,7 +84,7 @@ const Cart = () => {
 
                 <div className="col-10 text-left justify-content-center">
                     <div className="grid">
-                        <div className="col">
+                        <div className="col-4">
                             {/* <p className='mb-4 font-italic'><i className="pi pi-tag mr-2"></i>Categoría</p> */}
                             <span className="mb-2 mr-3 text-lg">{item?.name}</span>
                             <p> Talla {item?.size}</p>
@@ -97,7 +97,7 @@ const Cart = () => {
                             <p className='mb-4 font-italic'>Precio Unitario</p>
                             <span className="mb-2 mr-3">${formatNumber(item?.price)}</span>
                         </div>
-                        <div className="col pt-6">
+                        <div className="col-3 pt-6">
                             <span className='text-center'>
                                 <Button icon="pi pi-trash" onClick={() => removeProduct(item.id)} className="text-xs mr-2" />
                                 <Button label="Ver producto" icon="pi pi-eye" onClick={() => navegate(`/item/${item.id}`)}
