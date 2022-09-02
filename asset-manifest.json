@@ -1,0 +1,20 @@
+{
+  "files": {
+    "main.css": "/vestuarios-renueva-aperez/static/css/main.da8b35f7.css",
+    "main.js": "/vestuarios-renueva-aperez/static/js/main.12f0f294.js",
+    "static/js/787.6c55d14f.chunk.js": "/vestuarios-renueva-aperez/static/js/787.6c55d14f.chunk.js",
+    "static/media/primeicons.svg": "/vestuarios-renueva-aperez/static/media/primeicons.c6e2053303524e39530c.svg",
+    "static/media/primeicons.eot": "/vestuarios-renueva-aperez/static/media/primeicons.7fc4d8e224d1ff1b9c62.eot",
+    "static/media/primeicons.woff": "/vestuarios-renueva-aperez/static/media/primeicons.449aa8c65cdc5c2a8686.woff",
+    "static/media/primeicons.ttf": "/vestuarios-renueva-aperez/static/media/primeicons.91bacab1f083f2795272.ttf",
+    "static/media/logo1.png": "/vestuarios-renueva-aperez/static/media/logo1.9d7126c6244ee02fae34.png",
+    "index.html": "/vestuarios-renueva-aperez/index.html",
+    "main.da8b35f7.css.map": "/vestuarios-renueva-aperez/static/css/main.da8b35f7.css.map",
+    "main.12f0f294.js.map": "/vestuarios-renueva-aperez/static/js/main.12f0f294.js.map",
+    "787.6c55d14f.chunk.js.map": "/vestuarios-renueva-aperez/static/js/787.6c55d14f.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.da8b35f7.css",
+    "static/js/main.12f0f294.js"
+  ]
+}
