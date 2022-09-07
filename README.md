@@ -2,27 +2,27 @@
 
 Es una tienda de vestimenta que ofrece diferentes categorías de ropa. Se basa en la compra a través de un carro de compras.
 
-![Vestuario-renueva](https://user-images.githubusercontent.com/51928776/182741805-c6aa1c81-dfb0-4331-8fe8-c3d328ef3b35.gif)
+![React-App](https://user-images.githubusercontent.com/51928776/188779141-68e2ad8e-0e4a-4b88-aa2a-ff462590072a.gif)
+
 
 Tecnologías:
 1. JSX
 2. Javascript, HTML5, CSS3
-2. PrimeReact
-3. PrimeFlex
-4. PrimeIcons
+3. Reactjs
 
 Herramientas:
 1. Visual Studio Code.
 2. GitHub
 3. Microsoft Edge (Para el Debug)
-
+4. Firebase
 
 Bibliotecas ocupadas:
 
-Formik: Esta biblioteca se ocupó para validar el formulario de la compra.
-PrimeReact: Para el diseño de la aplicación.
-PrimeFlex: Para el ordenamiento de los elementos en la aplicación
-PrimeIcons: Para los iconos de la aplicación.
+1. Formik: Esta biblioteca se ocupó para validar el formulario de la compra.
+2. PrimeReact: Para el diseño de la aplicación.
+3. PrimeFlex: Para el ordenamiento de los elementos en la aplicación
+4. PrimeIcons: Para los iconos de la aplicación.
+5. Firebase: Para la administración de base de datos.
 
 Este proyecto fue creado para el curso de ReactJs de Coderhouse.
 
