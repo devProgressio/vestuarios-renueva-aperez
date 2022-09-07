@@ -16,6 +16,14 @@ Herramientas:
 2. GitHub
 3. Microsoft Edge (Para el Debug)
 
+
+Bibliotecas ocupadas:
+
+Formik: Esta biblioteca se ocupó para validar el formulario de la compra.
+PrimeReact: Para el diseño de la aplicación.
+PrimeFlex: Para el ordenamiento de los elementos en la aplicación
+PrimeIcons: Para los iconos de la aplicación.
+
 Este proyecto fue creado para el curso de ReactJs de Coderhouse.
 
 #

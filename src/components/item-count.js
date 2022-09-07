@@ -37,11 +37,11 @@ const ItemCount = ({ initial, stock, onAdd, size }) => {
                     <Button disabled={contador <= 1} icon="pi pi-minus" onClick={restar} className="p-button-outlined text-xs mr-2" />
                     <Button disabled={contador >= stock} icon="pi pi-plus" onClick={sumar} className="p-button-outlined text-xs mr-3" />
                     <Button onClick={() => { onAdd(contador, size); onLoadingClick(); }} icon="pi pi-check" loading={loading}
-                        label="Agregar al carrito" className='p-button-rounded p-button-outlined p-button-secondary' 
-                        style={{width: '16.5em'}}/>
+                        label="Agregar al carrito" className='p-button-rounded p-button-outlined p-button-secondary'
+                        style={{ width: '16.5em' }} />
                 </div>
                 <div className="col">
-                    
+
                 </div>
             </div>
         </>

@@ -8,13 +8,6 @@ const MenuNavBar = (props) => {
     const navigate = useNavigate();
     const items = [
         {
-            label: 'Inicio',
-            icon: 'pi pi-fw pi-home',
-            command: (event) => {
-                navigate('/');
-            }
-        },
-        {
             label: 'Productos',
             icon: 'pi pi-fw pi-shopping-bag',
             items: [
@@ -35,13 +28,6 @@ const MenuNavBar = (props) => {
                         ]
                 }
             ]
-        },
-        {
-            label: 'Contacto',
-            icon: 'pi pi-fw pi-user',
-            command: (event) => {
-                navigate('/contact');
-            }
         }
     ];
     
