@@ -44,33 +44,6 @@ const Cart = () => {
         </h1>
     );
 
-    const items = [
-        {
-            label: 'Productos',
-            command: (event) => {
-                //toast.current.show({ severity: 'info', summary: 'First Step', detail: event.item.label });
-            }
-        },
-        {
-            label: 'Envío',
-            command: (event) => {
-                //toast.current.show({ severity: 'info', summary: 'Seat Selection', detail: event.item.label });
-            }
-        },
-        {
-            label: 'Pago',
-            command: (event) => {
-                //toast.current.show({ severity: 'info', summary: 'Pay with CC', detail: event.item.label });
-            }
-        },
-        {
-            label: 'Confirmación',
-            command: (event) => {
-                //toast.current.show({ severity: 'info', summary: 'Last Step', detail: event.item.label });
-            }
-        }
-    ];
-
     const stock = (item) => {
         return <span className={`status-${item.stock < 10 ? 'lowstock' : 'instock'}`}>{item.stock < 10 ? 'Producto con stock bajo' : 'Producto con stock'}</span>
     };
@@ -116,9 +89,6 @@ const Cart = () => {
 
     return (
         <div className='grid'>
-            <div className='col-12'>
-                <Steps model={items} />
-            </div>
             <div className='col-12 md:col-8'>
                 <OrderList value={cart} header="Productos Seleccionados" listStyle={{ maxHeight: '100rem' }} dataKey="id"
                     itemTemplate={itemTemplate} >
@@ -129,7 +99,7 @@ const Cart = () => {
                 <Card header={header}>
                     <h1>Total: {formatNumber(totalPrice())}</h1>
                     <Button onClick={() => clearCart()} label="limpiar Carrito" className="p-button-outlined p-button-rounded p-button-sm mr-4"></Button>
-                    <Button label="Seguir comprando" className="p-button-outlined p-button-rounded p-button-sm" onClick={() => navegate('/product')}></Button>
+                    <Button label="Seguir comprando" className="p-button-outlined p-button-rounded p-button-sm mr-2" onClick={() => navegate('/product')}></Button>
                     {botonTerminarCompra}
                 </Card>
             </div>
