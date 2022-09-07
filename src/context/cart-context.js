@@ -32,7 +32,7 @@ const CartProvider = ({ children }) => {
     const cantInCart = cart.reduce((previous, product) => previous + product.quantity, 0);
 
 
-    
+
 
     const checkStock = (data, quantity) => {
         const productInCart = cart.find(product => product.id = data.id);

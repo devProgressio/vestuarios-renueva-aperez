@@ -49,7 +49,7 @@ const Checkout = () => {
             }
             else if (!/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(data.emailRepeat)) {
                 errors.emailRepeat = 'Dirección de correo electrónico no válida. E.j. example@email.com.';
-            } 
+            }
             else if (data.emailRepeat !== data.email) {
                 errors.emailRepeat = 'El correo ingresado no coincide.';
             }

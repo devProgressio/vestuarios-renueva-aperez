@@ -8,9 +8,9 @@ const CartWidget = () => {
     return (
         <>
             <Link to={`/cart`}>
-            <i className="pi pi-shopping-cart mr-4 p-text-secondary p-overlay-badge text-teal-200" style={{ fontSize: '2rem' }}>
-                <Badge value={cantInCart ? cantInCart : 0}></Badge>
-            </i>
+                <i className="pi pi-shopping-cart mr-4 p-text-secondary p-overlay-badge text-teal-200" style={{ fontSize: '2rem' }}>
+                    <Badge value={cantInCart ? cantInCart : 0}></Badge>
+                </i>
             </Link>
         </>
     );

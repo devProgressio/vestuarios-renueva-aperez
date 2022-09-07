@@ -1,11 +1,9 @@
 import { useContext } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-// import ItemCart from '../components/item-cart';
 import { CART_CONTEXT } from '../context/cart-context';
 import { OrderList } from 'primereact/orderlist';
 import { Button } from 'primereact/button';
 import { Image } from 'primereact/image';
-import { Steps } from 'primereact/steps';
 import { Card } from 'primereact/card';
 import { formatNumber } from '../utils/format';
 import '../assets/styles.css';
@@ -58,7 +56,6 @@ const Cart = () => {
                 <div className="col-10 text-left justify-content-center">
                     <div className="grid">
                         <div className="col-4">
-                            {/* <p className='mb-4 font-italic'><i className="pi pi-tag mr-2"></i>Categoría</p> */}
                             <span className="mb-2 mr-3 text-lg">{item?.name}</span>
                             <p> Talla {item?.size}</p>
                         </div>
@@ -77,7 +74,7 @@ const Cart = () => {
                                     className="p-button-outlined text-xs" />
                             </span>
                             <span className='flex pt-4'>
-                                { stock(item) }
+                                {stock(item)}
                             </span>
                         </div>
                     </div>

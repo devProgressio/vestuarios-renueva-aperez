@@ -75,12 +75,12 @@ const ItemDetail = ({ product }) => {
                                 <div className="col-12">
                                     <span className="col">
                                         <Dropdown value={size} options={SIZES} onChange={(e) => setSize(e.value)} placeholder="Talla" optionLabel="code" optionValue="code"
-                                            style={{ width: '30em' }} inputId="size"/>
+                                            style={{ width: '30em' }} inputId="size" />
                                     </span>
                                     <span className="mr-2">
                                         <ItemCount stock={stock} initial={1} onAdd={onAdd} size={size} />
                                     </span>
-                                    
+
                                     <div className="text-xs font-italic opacity-70 mb-6">Quedan aproximadamente {stock} en stock</div>
                                 </div>
                                 <div className="col">
