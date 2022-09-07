@@ -2,7 +2,8 @@
 
 Es una tienda de vestimenta que ofrece diferentes categorías de ropa. Se basa en la compra a través de un carro de compras.
 
-![Vestuario-renueva](https://user-images.githubusercontent.com/51928776/182741805-c6aa1c81-dfb0-4331-8fe8-c3d328ef3b35.gif)
+![React-App](https://user-images.githubusercontent.com/51928776/188779141-68e2ad8e-0e4a-4b88-aa2a-ff462590072a.gif)
+
 
 Tecnologías:
 1. JSX
